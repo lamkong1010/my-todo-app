@@ -8,10 +8,13 @@ def add_todo():
     functions.write_todos(todos)
     st.session_state['new_todo']=""
 
+st.set_page_config(layout="wide")
 
 st.title("My Todo App")
 st.subheader("This is my todo app.")
-st.write("This app is to increase your productivity.")
+st.write("This app is to increase your <b>productivity</b>.",
+          unsafe_allow_html=True)
+# allow html code to write, other title...have fixed format. <h1> title size
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
